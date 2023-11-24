@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+contents_of_pwd="$(ls ./)"
+for content in $contents_of_pwd
+do
+    if [[ $content == *-* ]]
+    then
+        echo "${content//*-/}"
+    fi
+done
