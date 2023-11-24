@@ -7,5 +7,7 @@ do
     if [[ $content == *-* ]]
     then
         echo "${content//*-/}"
+    else
+        echo "${content}"
     fi
 done
