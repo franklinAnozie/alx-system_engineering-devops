@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times using a while loop.
+# This script is displaying a clock using a while loop.
 
 hours=0
 while [ $hours -le 12 ]

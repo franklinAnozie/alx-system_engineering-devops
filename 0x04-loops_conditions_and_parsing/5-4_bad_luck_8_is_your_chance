@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times using a while loop.
+# This script is displaying "Best School" 10 times using a while loop but badluck at 4th iteration and good luck at 8th iteration.
 
 count=1
 while [ $count -le 10 ]

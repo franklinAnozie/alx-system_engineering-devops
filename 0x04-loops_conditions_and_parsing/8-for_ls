@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script prints the contents of the pwd excluding everything before the hyphen(-).
 
 contents_of_pwd="$(ls ./)"
 for content in $contents_of_pwd

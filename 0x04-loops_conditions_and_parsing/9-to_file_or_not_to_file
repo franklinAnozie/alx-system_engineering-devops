@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script checks if a file or directory named school is present in the pwd.
 
 file_path=school
 
