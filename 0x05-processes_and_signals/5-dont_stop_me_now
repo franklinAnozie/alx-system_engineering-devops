@@ -7,6 +7,6 @@ do
     if [[ $process_name == *4-to_infinity_and_beyond* ]]
     then
         pid=$(basename "$pid_dir")
-        kill -9 $pid
+        kill -9 "$pid"
     fi
 done
