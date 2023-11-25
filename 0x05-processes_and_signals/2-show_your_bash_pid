@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script lists all the process containing bash
+
+ps -aux | grep "bash"
