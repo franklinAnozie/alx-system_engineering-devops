@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# this script lists all the process containing bash
+
+for pid_dir in /proc/[0-9]*
+do
+    process_name=$(tr -d '\0' < "$pid_dir/cmdline")
+    if [[ $process_name == *7-highlander* ]]
+    then
+        pkill -9 -f "7-highlander"
+    fi
+done

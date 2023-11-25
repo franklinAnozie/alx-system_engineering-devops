@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# this script lists all the process containing bash
+
+trap 'echo "I am invincible!!!"' SIGTERM
+count=1
+while [ $count ]
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
