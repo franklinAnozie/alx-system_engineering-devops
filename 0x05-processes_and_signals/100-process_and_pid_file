@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# this script lists all the process containing bash
+
+trap 'echo "Y U no love me?!"' SIGINT
+trap handle_signal SIGTERM
+trap handle_signal_quit SIGQUIT
+
+handle_signal()
+{
+    echo "I hate the kill command"
+    rm /var/run/myscript.pid
+    exit 0
+}
+
+handle_signal_quit()
+{
+    rm /var/run/myscript.pid
+    exit 0
+}
+
+echo "$$" >> /var/run/myscript.pid
+count=1
+while [ $count ]
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
+

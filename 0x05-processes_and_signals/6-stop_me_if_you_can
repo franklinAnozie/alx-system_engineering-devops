@@ -9,4 +9,3 @@ do
         pkill -15 -f "4-to_infinity_and_beyond"
     fi
 done
- 
