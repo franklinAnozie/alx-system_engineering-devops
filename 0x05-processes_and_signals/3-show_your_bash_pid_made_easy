@@ -7,6 +7,7 @@ do
     if [[ $process_name == *bash* ]]
     then
         pid=$(basename "$pid_dir")
-        echo "$pid" "$process_name"
+        pid_proc=$(basename "$process_name")
+        echo "$pid" "$pid_proc"
     fi
 done
