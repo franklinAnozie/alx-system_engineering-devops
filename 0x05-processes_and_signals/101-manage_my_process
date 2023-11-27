@@ -17,7 +17,7 @@ stop()
 
 restart()
 {
-    pkill -9 -f "manage_my_process" &
+    pkill -15 -f "manage_my_process" &
     rm /var/run/my_process.pid &
     ./manage_my_process &
     echo "$$" >> /var/run/my_process.pid &
