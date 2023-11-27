@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# prints "I am alive!" to /tmp/my_process every 2 seconds
 
 while true
 do

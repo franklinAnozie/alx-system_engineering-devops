@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# manages the "manage_my_process" process
 
 start()
 {
