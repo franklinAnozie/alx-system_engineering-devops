@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #parse apache logs
 
-awk '{print $10,$1,$9 | "sort -k3n"}' apache-access.log
+awk '{print $10,$1,$9 | "sort -k1nr"}' apache-access.log
