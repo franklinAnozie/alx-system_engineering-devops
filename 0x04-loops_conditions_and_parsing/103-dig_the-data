@@ -4,4 +4,4 @@ log_file="apache-access.log"
 
 awk '{ ip=$1; status=$9; count[ip,status]++ } END { for (i in count) print count[i], i }' "$log_file" |
   sort -rn | 
-  awk '{ split($2, arr, SUBSEP); printf "%s %s %s\n", $1, arr[1], arr[2] }'
+  awk '{ split($2, arr, SUBSEP); print $1, arr[1], arr[2] }'
