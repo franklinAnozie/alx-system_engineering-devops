@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 # grouping data by IP address and Status codes
 log_file="apache-access.log"
 
