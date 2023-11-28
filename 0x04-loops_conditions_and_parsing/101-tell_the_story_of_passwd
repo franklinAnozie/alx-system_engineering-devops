@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#the story of passwd
+
+read_from=/etc/passwd
+while IFS=: read -r username pswd uid gid uid_inf home command
+do
+    echo "The user $username is part of the $gid gang, lives in $home and rides $command. $uid's place is protected by the passcode $pswd, more info about the user here: $uid_inf"
+done < $read_from
