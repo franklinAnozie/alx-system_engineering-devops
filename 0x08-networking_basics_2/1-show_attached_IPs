@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This script shows all IPV4 IPs on the machine
+
+ifconfig -4
