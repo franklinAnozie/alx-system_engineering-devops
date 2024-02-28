@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Install and configerring nginx web server
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name ajwadg.tech;
+
+        location /redirect_me {
+                return 301 https://www.nginx.com/blog/creating-nginx-rewrite-rules/;
+        }
+}" | sudo tee /etc/nginx/sites-available/default
+sudo service nginx restart
