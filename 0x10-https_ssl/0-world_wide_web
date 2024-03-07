@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Bash script to display information about subdomains
+
+display () {
+    dest_ip=$(dig "$2.$1" | grep -A1 "ANSWER SECTION:" | tail -1 | awk '{print $5}')
+    record_type=$(dig "$2.$1" | grep -A1 "ANSWER SECTION:" | tail -1 | awk '{print $4}')
+
+    echo "The subdomain $2 is a $record_type record and points to $dest_ip"
+}
+
+if [ "$#" -eq 1 ]
+then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    for subdomain in "${subdomains[@]}"
+    do
+    display "$1" "$subdomain"
+    done
+else
+    display "$1" "$2"
+fi
