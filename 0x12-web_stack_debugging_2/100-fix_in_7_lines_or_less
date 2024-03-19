@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #configure NginX
 chmod 744 /etc/nginx/nginx.conf
-sudo sed -i 's/^user .*/user nginx;/' /etc/nginx/nginx.conf
+sudo sed -i 's/^user www-data/user nginx/' /etc/nginx/nginx.conf
 sudo sed -i  -e "s/ 80 / 8080 /" -e "s/:80 /:8080 /" /etc/nginx/sites-available/default
 sudo -u nginx service nginx restart
 
