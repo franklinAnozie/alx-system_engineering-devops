@@ -4,4 +4,4 @@
 name=$(date +"%d-%m-%y.tar.gz")
 
 sudo mysqldump --all-databases -u root -p"$1" > backup.sql
-tar cvf "$name" backup.sql
+tar czvf "$name" backup.sql
