@@ -2,7 +2,6 @@
 #script to create an sql dump and compress the dump
 
 name=$(date +"%d-%m-%y.tar.gz")
-passwd=$1
 
-sudo mysqldump --all-databases -uroot -p"$passwd" > backup.sql
+sudo mysqldump --all-databases -u root -p"$1" > backup.sql
 tar cvf "$name" backup.sql
