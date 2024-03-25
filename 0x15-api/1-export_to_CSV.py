@@ -15,7 +15,7 @@ def export_csv(id):
     with req.urlopen(URI2) as resp:
         to_print = resp.read().decode("UTF-8")
         data = json.loads(to_print)
-        usr_name = data["name"]
+        usr_name = data["username"]
     with req.urlopen(URI1) as resp:
         to_print = resp.read().decode("UTF-8")
         data = json.loads(to_print)
