@@ -1,5 +1,4 @@
 urllib_tester1.py
-machine*
-USER_ID.csv
+*.csv
 *tester*
-eggs*
+trial.py

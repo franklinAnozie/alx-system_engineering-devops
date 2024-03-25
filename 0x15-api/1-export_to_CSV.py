@@ -19,7 +19,7 @@ def export_csv(id):
     with req.urlopen(URI1) as resp:
         to_print = resp.read().decode("UTF-8")
         data = json.loads(to_print)
-    with open('USER_ID.csv', 'w', newline='') as csvfile:
+    with open(f"{id}.csv", 'w+', newline='') as csvfile:
         to_write = csv.writer(csvfile, quotechar='"', quoting=csv.QUOTE_ALL)
         for ds in data:
             if ds["userId"] == int(id):
