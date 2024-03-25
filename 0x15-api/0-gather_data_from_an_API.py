@@ -26,12 +26,13 @@ def api_req(id):
                 if ds["completed"]:
                     num_of_done += 1
         num_of_tasks = len(user_data)
-    
-    print(f"Employee {user_name} is done with tasks({num_of_done}/{num_of_tasks}):")
+
+    print(f"Employee {user_name} is done
+          with tasks({num_of_done}/{num_of_tasks}): ")
 
     for mem in user_data:
         if mem["completed"]:
-            print (f'\t {mem["title"]}')
+            print(f'\t {mem["title"]}')
 
 
 if __name__ == '__main__':
