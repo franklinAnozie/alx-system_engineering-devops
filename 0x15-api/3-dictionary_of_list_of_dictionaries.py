@@ -21,7 +21,7 @@ def export_csv():
         data = json.loads(to_print)
         for d in data:
             if d["userId"] not in todos:
-                todos["userId"] = [
+                todos[d["userId"]] = [
                     {
                         "username": users[d["userId"]],
                         "task": d["title"],
@@ -29,14 +29,15 @@ def export_csv():
                     }
                 ]
             else:
-                todos["userId"].append(
+                todos[d["userId"]].append(
                     {
-                        "username": users["userId"],
+                        "username": users[d["userId"]],
                         "task": d["title"],
                         "completed": d["completed"]
                     }
                 )
-    print(todos)
+    with open("todo_all_employees.json", "w") as data:
+        json.dump(todos, data)
 
 
 if __name__ == "__main__":
