@@ -3,11 +3,14 @@
 
 import requests
 
+
 def number_of_subscribers(subreddit):
+    """ gets the number of subscribers """
     try:
         URI = f"https://www.reddit.com/r/{subreddit}/about.json"
         retVal = None
-        req = requests.get(url=URI, allow_redirects=False)
+        header = {"User-Agent": "0x00"}
+        req = requests.get(url=URI, headers=header, allow_redirects=False)
         req = req.json()
     except Exception as e:
         retVal = 0

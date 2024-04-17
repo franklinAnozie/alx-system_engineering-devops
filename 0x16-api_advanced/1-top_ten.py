@@ -3,12 +3,15 @@
 
 import requests
 
-def top_ten(subreddit="programming"):
+
+def top_ten(subreddit):
+    """ gets the top ten reddits """
     try:
         URI = f"https://www.reddit.com/r/{subreddit}/top.json"
+        header = {"User-Agent": "0x00"}
         count = 10
         retVal = []
-        req = requests.get(url=URI, allow_redirects=False)
+        req = requests.get(url=URI, headers=header, allow_redirects=False)
         req = req.json()
     except Exception as e:
         retVal = 0
@@ -18,16 +21,13 @@ def top_ten(subreddit="programming"):
                 for mem in req[key]:
                     if mem == "children":
                         for nk in req[key][mem]:
-                            while count > 0:
-                                retVal.append(nk)
-        print(len(retVal))
-
-
+                            if count <= 0:
+                                break
+                            retVal.append(nk["data"]["title"])
+                            count -= 1
     finally:
-        if retVal is None or retVal == 0:
-            return 0
+        if retVal == 0 or len(retVal) == 0:
+            print(None)
         else:
-            return retVal
-
-if __name__ == "__main__":
-    top_ten()
+            for x in retVal:
+                print(x)
