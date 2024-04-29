@@ -14,8 +14,14 @@ def top_ten(subreddit):
             retVal = req.json().get("data").get("children")
         except Exception:
             print(None)
+            return
         else:
-            for index in range(10):
-                print(retVal[index]["data"]["title"])
+            if len(retVal) >= 10:
+                for index in range(10):
+                    print(retVal[index]["data"]["title"])
+            else:
+                for index in range(len(retVal)):
+                    print(retVal[index]["data"]["title"])
     else:
         print(None)
+        return
