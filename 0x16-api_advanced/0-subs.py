@@ -1,23 +1,20 @@
 #!/usr/bin/python3
-"""
-    0-subs module
-"""
+""" Get the number of subcribers for a subreddit """
+
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """
-        take one arg the subreddit name
-        sends a get req to an api
-        to get the number of subscribers
-        returns the number or zero if not exits
-    """
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {"User-Agent": "0x00"}
-
-    data = requests.get(url, headers=headers, allow_redirects=False)
-
-    if data.ok:
-        value = data.json().get("data").get("subscribers")
-        return value if value is not None else 0
-    return 0
+    """ gets the number of subscribers """
+    URI = f"https://www.reddit.com/r/{subreddit}/about.json"
+    header = {"User-Agent": "ubuntu:Python (by/0x00)"}
+    req = requests.get(url=URI, headers=header, allow_redirects=False)
+    if req.ok:
+        try:
+            retVal = req.json().get("data").get("subscribers")
+        except Exception:
+            return 0
+        else:
+            return retVal
+    else:
+        return 0

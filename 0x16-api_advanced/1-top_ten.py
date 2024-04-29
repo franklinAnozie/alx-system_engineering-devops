@@ -13,7 +13,7 @@ def top_ten(subreddit):
         returns value
     """
     url = "https://www.reddit.com/r/{}/top.json".format(subreddit)
-    headers = {"User-Agent": "0x00"}
+    headers = {"User-Agent": "ubuntu:Python (by/0x00)"}
 
     data = requests.get(url, headers=headers, allow_redirects=False)
 
